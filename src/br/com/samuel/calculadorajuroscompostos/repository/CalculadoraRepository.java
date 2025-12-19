@@ -11,4 +11,8 @@ public class CalculadoraRepository {
         return montante;
     }
 
+    public double calcularJuros(double capitalInicial, double montante) {
+        double juros = montante -  capitalInicial;
+        return juros;
+    }
 }

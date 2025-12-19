@@ -12,6 +12,12 @@ public class TelaCalculadoraController {
     private Label lblMontante;
 
     @FXML
+    private Label lblJuros;
+
+    @FXML
+    private Label lblCapitalInicial;
+
+    @FXML
     private Button btCalcular;
 
     @FXML
@@ -29,6 +35,8 @@ public class TelaCalculadoraController {
 
     public void initialize(){
         lblMontante.setVisible(false);
+        lblCapitalInicial.setVisible(false);
+        lblJuros.setVisible(false);
     }
 
     public void calcular(){
@@ -45,24 +53,34 @@ public class TelaCalculadoraController {
             JurosCompostos jc = new JurosCompostos();
             CalculadoraRepository cr = new CalculadoraRepository();
 
-            double CapitalInicial = Double.parseDouble(TextCapitalInicial);
-            double Juros = Double.parseDouble(TextJuros);
-            int Tempo = Integer.parseInt(TextTempo);
-
-            jc.setCapitalInicial(CapitalInicial);
-            jc.setTaxa(Juros);
-            jc.setTempo(Tempo);
+            double capitalInicial = Double.parseDouble(TextCapitalInicial);
+            double taxa = Double.parseDouble(TextJuros);
+            int tempo = Integer.parseInt(TextTempo);
+            
+            jc.setCapitalInicial(capitalInicial);
+            jc.setTaxa(taxa);
+            jc.setTempo(tempo);
 
             double montante = cr.calcularMontante(jc.getCapitalInicial(), jc.getTaxa(), jc.getTempo());
-            mostrarMontante(montante);
+            double juros = cr.calcularJuros(jc.getCapitalInicial(), montante);
+
+            mostrarResultado(montante, juros,  capitalInicial);
         }
     }
 
-    public void mostrarMontante(double montante){
+    public void mostrarResultado(double montante, double juros, double capitalInicial) {
         String montanteFormatado = String.format("R$%,.2f", montante);
+        String jurosFormatado = String.format("R$%,.2f", juros);
+        String capitalFormatado = String.format("R$%,.2f", capitalInicial);
 
         lblMontante.setVisible(true);
         lblMontante.setText(montanteFormatado);
+
+        lblJuros.setVisible(true);
+        lblJuros.setText(jurosFormatado);
+
+        lblCapitalInicial.setVisible(true);
+        lblCapitalInicial.setText(capitalFormatado);
     }
 
     public void limpar(){
@@ -76,6 +94,9 @@ public class TelaCalculadoraController {
             txfTempo.clear();
 
             lblMontante.setVisible(false);
+            lblCapitalInicial.setVisible(false);
+            lblJuros.setVisible(false);
+
             txfCapitalInicial.requestFocus();
         }
 

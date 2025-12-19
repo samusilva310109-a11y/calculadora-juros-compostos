@@ -48,17 +48,23 @@
                   </Label>
                </children>
             </HBox>
-            <GridPane prefHeight="30.0" prefWidth="157.0">
+            <GridPane prefHeight="41.0" prefWidth="182.0" vgap="10.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.5999755859375" minWidth="10.0" prefWidth="92.5999755859375" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.60003662109375" minWidth="10.0" prefWidth="89.4000244140625" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label prefHeight="18.0" prefWidth="74.0" text="Montante:" />
                   <Label fx:id="lblMontante" text="Label" GridPane.columnIndex="1" />
+                  <Label text="Juros:" GridPane.rowIndex="2" />
+                  <Label fx:id="lblJuros" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Capital Inicial:" GridPane.rowIndex="1" />
+                  <Label fx:id="lblCapitalInicial" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
          </children>

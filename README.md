@@ -1,7 +1,7 @@
 # Calculadora de Juros compostos
 <img width="745" height="534" alt="image" src="https://github.com/user-attachments/assets/cee8c918-5732-403e-84a9-f7415fe804d5" />
 
-## Descrição 📝
+## Objetivo 🎯
 A criação da calculadora de juros compostos tem o objetivo de aplicar conceitos básicos de matemática financeira, além de praticar lógica de programação e a criação de interfaces gráficas com JavaFx
 
 ## Funcionalidade ⚙️

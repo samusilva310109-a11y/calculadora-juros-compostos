@@ -1,0 +1,24 @@
+.root{
+    -fx-font-family: "Comic Sans MS";
+    -fx-background-color: #cdcdcd;
+}
+
+#boxFormulario{
+    -fx-spacing: 15;
+    -fx-font-weight: bold;
+}
+#boxButtons{
+    -fx-alignment: center;
+    -fx-spacing: 100;
+}
+.button{
+    -fx-pref-width: 200;
+}
+
+#boxResultado{
+    -fx-background-color: #bfbfbf;
+    -fx-padding: 0, 0, 0, 10;
+}
+#lblResultado{
+    -fx-font-size: 30;
+}

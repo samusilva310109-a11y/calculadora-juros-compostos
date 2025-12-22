@@ -4,7 +4,13 @@ package br.com.samuel.calculadorajuroscompostos.controller;
 import br.com.samuel.calculadorajuroscompostos.model.JurosCompostos;
 import br.com.samuel.calculadorajuroscompostos.repository.CalculadoraRepository;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class TelaCalculadoraController {
 
@@ -22,6 +28,9 @@ public class TelaCalculadoraController {
 
     @FXML
     private Button btLimpar;
+
+    @FXML
+    private Button btFinanciamento;
 
     @FXML
     private TextField txfCapitalInicial;
@@ -102,4 +111,10 @@ public class TelaCalculadoraController {
 
     }
 
+    public void mudarParaFinanciamento() throws IOException {
+        Parent fxmlFinanciamento = FXMLLoader.load(getClass().getResource("/br/com/samuel/calculadorajuroscompostos/resources/view/telaFinanciamento.fxml"));
+
+        Scene sceneFinanciamento = new Scene(fxmlFinanciamento);
+        sceneFinanciamento.getStylesheets().add(getClass().getResource("/br/com/samuel/calculadorajuroscompostos/resources/style/telaFinanciamento.css").toExternalForm());
+    }
 }

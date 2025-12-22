@@ -22,3 +22,7 @@
 #lblResultado{
     -fx-font-size: 30;
 }
+
+#boxButtonResultado{
+    -fx-alignment: center;
+}

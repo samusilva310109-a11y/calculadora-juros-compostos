@@ -19,9 +19,9 @@
          <children>
             <Label text="Capital Inicial" />
             <TextField fx:id="txfCapitalInicial" />
-            <Label text="Taxa de juros % (a.m)" />
+            <Label text="Taxa de juros % " />
             <TextField fx:id="txfJuros" />
-            <Label text="Tempo (em meses)" />
+            <Label text="Período" />
             <TextField fx:id="txfTempo" />
             <HBox id="boxButtons" prefHeight="69.0" prefWidth="450.0">
                <children>

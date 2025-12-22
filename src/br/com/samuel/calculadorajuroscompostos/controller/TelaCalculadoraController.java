@@ -56,7 +56,7 @@ public class TelaCalculadoraController {
             double capitalInicial = Double.parseDouble(TextCapitalInicial);
             double taxa = Double.parseDouble(TextJuros);
             int tempo = Integer.parseInt(TextTempo);
-            
+
             jc.setCapitalInicial(capitalInicial);
             jc.setTaxa(taxa);
             jc.setTempo(tempo);

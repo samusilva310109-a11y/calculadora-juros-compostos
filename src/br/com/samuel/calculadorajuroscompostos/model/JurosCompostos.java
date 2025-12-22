@@ -1,9 +1,9 @@
 package br.com.samuel.calculadorajuroscompostos.model;
 
 public class JurosCompostos {
-    double capitalInicial;
-    double taxa;
-    int tempo;
+    private double capitalInicial;
+    private double taxa;
+    private int tempo;
 
     public int getTempo() {
         return tempo;

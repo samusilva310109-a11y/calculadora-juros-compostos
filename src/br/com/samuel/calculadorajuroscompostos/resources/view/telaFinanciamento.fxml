@@ -13,8 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/telaFinciamento.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.samuel.calculadorajuroscompostos.controller.TelaFinanciamentoController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/telaFinanciamento.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.samuel.calculadorajuroscompostos.controller.TelaFinanciamentoController">
    <children>
       <VBox prefHeight="400.0" prefWidth="216.0">
          <children>
@@ -32,9 +31,9 @@
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="120.0" text="Valor Principal (R$)" />
                   <Label alignment="CENTER" prefHeight="15.0" prefWidth="129.0" text="Taxa de juros mensal (%)" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" prefHeight="15.0" prefWidth="104.0" text="Número de meses" GridPane.rowIndex="2" />
-                  <TextField prefHeight="23.0" prefWidth="111.0" GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txfValorPrincipal" prefHeight="23.0" prefWidth="111.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="txfTaxa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txfMeses" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
                <VBox.margin>
                   <Insets top="40.0" />
@@ -42,7 +41,7 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="22.0" prefWidth="198.0">
                <children>
-                  <Button maxWidth="100.0" mnemonicParsing="false" prefWidth="100.0" text="Calcular" />
+                  <Button maxWidth="100.0" mnemonicParsing="false" onAction="#calcularSAC" prefWidth="100.0" text="Calcular" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -72,13 +71,13 @@
             </GridPane>
          </children>
       </VBox>
-      <TableView layoutX="215.0" prefHeight="400.0" prefWidth="384.0">
+      <TableView fx:id="tableFinanciamento" layoutX="215.0" prefHeight="400.0" prefWidth="384.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Mês" />
-          <TableColumn prefWidth="75.0" text="Parcela (PMT)" />
-            <TableColumn prefWidth="75.0" text="Amortização" />
-            <TableColumn prefWidth="75.0" text="Juros" />
-            <TableColumn prefWidth="75.0" text="Saldo Devedor" />
+          <TableColumn fx:id="colMes" prefWidth="75.0" text="Mês" />
+          <TableColumn fx:id="colParcela" prefWidth="75.0" text="Parcela (PMT)" />
+            <TableColumn fx:id="colAmortizacao" prefWidth="75.0" text="Amortização" />
+            <TableColumn fx:id="colJuros" prefWidth="75.0" text="Juros" />
+            <TableColumn fx:id="colSaldo" prefWidth="75.0" text="Saldo Devedor" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

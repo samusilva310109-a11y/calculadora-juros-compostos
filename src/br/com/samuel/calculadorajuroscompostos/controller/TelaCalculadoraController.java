@@ -116,5 +116,12 @@ public class TelaCalculadoraController {
 
         Scene sceneFinanciamento = new Scene(fxmlFinanciamento);
         sceneFinanciamento.getStylesheets().add(getClass().getResource("/br/com/samuel/calculadorajuroscompostos/resources/style/telaFinanciamento.css").toExternalForm());
+
+        Stage stage = new Stage();
+        stage.setScene(sceneFinanciamento);
+        stage.setResizable(false);
+        stage.setTitle("Financiamento SAC");
+        stage.show();
+
     }
 }

@@ -73,7 +73,9 @@ public class TelaFinanciamentoController {
         double amortizacao = valorPrincipal /  valorMes;
         double saldo = valorPrincipal;
 
-        for (int i = 0; i <= valorMes; i++) {
+
+        for (int i = 1  ; i <= valorMes; i++) {
+
             double juros = saldo * taxa;
             double valorParcela = amortizacao + juros;
             saldo -= amortizacao;
@@ -85,7 +87,7 @@ public class TelaFinanciamentoController {
 
 
 
-            listaFinanciamento.add(new Financiamento(valorMes, valorParcelaFormatado, jurosFormatado, saldoFormatado, amortizacaoFormatado));
+            listaFinanciamento.add(new Financiamento(i , valorParcelaFormatado, jurosFormatado, saldoFormatado, amortizacaoFormatado));
         }
 
         tableFinanciamento.setItems(listaFinanciamento);

@@ -4,12 +4,24 @@
 ## Objetivo 🎯
 A criação da calculadora de juros compostos tem o objetivo de aplicar conceitos básicos de matemática financeira, além de praticar lógica de programação e a criação de interfaces gráficas com JavaFx
 
+## Interface Gráfica
+
+### Calculadora de juros compostos (Tela Inicial)
+<img width="746" height="540" alt="image" src="https://github.com/user-attachments/assets/96e767d0-346b-46b8-8229-983827699e6b" />
+
+
+
+### Calculadora de Financiamento
+<img width="747" height="535" alt="image" src="https://github.com/user-attachments/assets/c6d2c1c7-66a3-4d6a-ae72-add948dcd5c5" />
+
 ## Funcionalidade ⚙️
 **Realizar cálculo automático do montante**
 
 **Realizar cálculo automático do juros**
 
 **Apresentar estes valores ao usuário**
+
+**Realizar cálculo automático de financiamento seguindo as regras da tabela SAC e apresentar o custo total, juros totais pagos e o valor financiado ao usuário** \*NOVA FUNCIONALIDADE\*
 
 ## Tecnologias utilizadas 💻
 

@@ -2,12 +2,12 @@ package br.com.samuel.calculadorajuroscompostos.model;
 
 public class Financiamento {
     private int mes;
-    private String parcela;
-    private String juros;
-    private String saldoDevedor;
-    private String amortizacao;
+    private double parcela;
+    private double juros;
+    private double saldoDevedor;
+    private double amortizacao;
 
-    public Financiamento(int mes, String parcela, String juros, String saldoDevedor, String amortizacao) {
+    public Financiamento(int mes, double parcela, double juros, double saldoDevedor, double amortizacao) {
         this.mes = mes;
         this.parcela = parcela;
         this.juros = juros;
@@ -19,20 +19,22 @@ public class Financiamento {
         return mes;
     }
 
-    public String getParcela() {
+    public double getParcela() {
         return parcela;
     }
 
-    public String getJuros() {
+    public double getJuros() {
         return juros;
     }
 
-    public String getSaldoDevedor() {
+    public double getSaldoDevedor() {
         return saldoDevedor;
     }
 
-    public String getAmortizacao() {
+    public double getAmortizacao() {
         return amortizacao;
     }
+
+
 
 }

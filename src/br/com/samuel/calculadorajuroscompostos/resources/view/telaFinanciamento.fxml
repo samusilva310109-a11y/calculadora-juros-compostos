@@ -39,9 +39,10 @@
                   <Insets top="40.0" />
                </VBox.margin>
             </GridPane>
-            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="198.0">
+            <HBox alignment="CENTER" prefHeight="22.0" prefWidth="198.0" spacing="10.0">
                <children>
-                  <Button maxWidth="100.0" mnemonicParsing="false" onAction="#calcularSAC" prefWidth="100.0" text="Calcular" />
+                  <Button maxWidth="100.0" mnemonicParsing="false" onAction="#calcularSAC" prefHeight="23.0" prefWidth="81.0" text="Calcular" />
+                  <Button mnemonicParsing="false" onAction="#limpar" prefHeight="23.0" prefWidth="81.0" text="Limpar" />
                </children>
                <VBox.margin>
                   <Insets top="10.0" />
@@ -64,9 +65,9 @@
                   <Label alignment="CENTER" prefHeight="15.0" prefWidth="114.0" text="Juros:" />
                   <Label alignment="CENTER" prefHeight="15.0" prefWidth="118.0" text="Vaor Financiadol:" GridPane.rowIndex="1" />
                   <Label alignment="CENTER" prefHeight="15.0" prefWidth="108.0" text="Custo Total:" GridPane.rowIndex="2" />
-                  <Label fx:id="lblJuros" text="Label" GridPane.columnIndex="1" />
-                  <Label fx:id="lblValorFinanciado" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="lblCustoTotal" prefHeight="15.0" prefWidth="43.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label fx:id="lblJuros" prefHeight="15.0" prefWidth="114.0" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="lblValorFinanciado" prefHeight="15.0" prefWidth="126.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="lblCustoTotal" prefHeight="15.0" prefWidth="113.0" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>

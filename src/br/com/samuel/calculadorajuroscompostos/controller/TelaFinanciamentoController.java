@@ -1,14 +1,15 @@
 package br.com.samuel.calculadorajuroscompostos.controller;
 
 import br.com.samuel.calculadorajuroscompostos.model.Financiamento;
+import br.com.samuel.calculadorajuroscompostos.repository.FinanciamentoRepository;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class TelaFinanciamentoController {
 
@@ -56,10 +57,65 @@ public class TelaFinanciamentoController {
         lblCustoTotal.setVisible(false);
 
         colMes.setCellValueFactory(new PropertyValueFactory<>("mes"));
+
         colParcela.setCellValueFactory(new PropertyValueFactory<>("parcela"));
+        colParcela.setCellFactory(tableColumn ->  new TableCell<Financiamento, Double>() {
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                }else {
+                    Locale locale = new Locale("pt", "BR");
+                    setText(NumberFormat.getCurrencyInstance(locale).format(item));
+                }
+            }
+        });
+
         colAmortizacao.setCellValueFactory(new PropertyValueFactory<>("amortizacao"));
+        colAmortizacao.setCellFactory(tableColumn ->  new TableCell<Financiamento, Double>() {
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty || item == null) {
+                    setText(null);
+                }else {
+                    Locale locale = new Locale("pt", "BR");
+                    setText(NumberFormat.getCurrencyInstance(locale).format(item));
+                }
+            }
+        });
+
         colJuros.setCellValueFactory(new PropertyValueFactory<>("juros"));
+        colJuros.setCellFactory(tc -> new TableCell<Financiamento, Double>() {
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    Locale locale = new Locale("pt", "BR");
+                    setText(NumberFormat.getCurrencyInstance(locale).format(item));
+                }
+            }
+        });
+
         colSaldo.setCellValueFactory(new PropertyValueFactory<>("saldoDevedor"));
+        colSaldo.setCellFactory(tableColumn -> new TableCell<Financiamento, Double>() {
+            @Override
+            protected void updateItem(Double item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setText(null);
+                } else {
+                    Locale locale = new Locale("pt", "BR");
+                    setText(NumberFormat.getCurrencyInstance(locale).format(item));
+                }
+            }
+        });
+
         tableFinanciamento.setItems(listaFinanciamento);
     }
 
@@ -80,17 +136,44 @@ public class TelaFinanciamentoController {
             double valorParcela = amortizacao + juros;
             saldo -= amortizacao;
 
-            String jurosFormatado = String.format("R$ %,.2f", Math.max(0, juros));
-            String valorParcelaFormatado = String.format("R$ %,.2f", valorParcela);
-            String saldoFormatado = String.format("R$ %,.2f",  Math.max(0, saldo));
-            String amortizacaoFormatado = String.format("R$ %,.2f", amortizacao);
-
-
-
-            listaFinanciamento.add(new Financiamento(i , valorParcelaFormatado, jurosFormatado, saldoFormatado, amortizacaoFormatado));
+            listaFinanciamento.add(new Financiamento(i , valorParcela, juros, saldo, amortizacao));
         }
 
         tableFinanciamento.setItems(listaFinanciamento);
+        mostarResultados();
+    }
+
+    public void mostarResultados(){
+        FinanciamentoRepository fr = new FinanciamentoRepository();
+        double custoTotal = fr.calcularValorTotalPago(listaFinanciamento);
+        double jurosTotal = fr.calcularJurosTotal(listaFinanciamento);
+        double valorPrincipal = Double.parseDouble(txfValorPrincipal.getText());
+
+        String custoTotalFormatado = String.format("R$ %,.2f", custoTotal);
+        String jurosTotalFormatado = String.format("R$ %,.2f", jurosTotal);
+        String valorPrincipalFormatado = String.format("R$ %,.2f", valorPrincipal);
+
+        lblCustoTotal.setVisible(true);
+        lblCustoTotal.setText(custoTotalFormatado);
+
+        lblJuros.setVisible(true);
+        lblJuros.setText(jurosTotalFormatado);
+
+        lblValorFinanciado.setVisible(true);
+        lblValorFinanciado.setText(valorPrincipalFormatado);
+    }
+
+    public void limpar(){
+        lblCustoTotal.setVisible(false);
+        lblJuros.setVisible(false);
+        lblValorFinanciado.setVisible(false);
+
+        listaFinanciamento.clear();
+        txfValorPrincipal.setText("");
+        txfTaxa.setText("");
+        txfMeses.setText("");
+
+        txfValorPrincipal.requestFocus();
     }
 
 }

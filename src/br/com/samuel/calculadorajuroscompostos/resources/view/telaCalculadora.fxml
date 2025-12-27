@@ -67,6 +67,14 @@
                   <Label fx:id="lblCapitalInicial" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
+            <HBox id="boxButtonResultado" prefHeight="26.0" prefWidth="182.0">
+               <children>
+                  <Button id="btFinanciamento" fx:id="btFinanciamento" alignment="CENTER" contentDisplay="CENTER" maxHeight="0.0" maxWidth="100.0" mnemonicParsing="false" onAction="#mudarParaFinanciamento" prefHeight="23.0" prefWidth="39.0" text="Finciamento" textAlignment="CENTER" />
+               </children>
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </HBox>
          </children>
          <opaqueInsets>
             <Insets />

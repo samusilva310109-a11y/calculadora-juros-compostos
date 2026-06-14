@@ -12,7 +12,8 @@ A criação da calculadora de juros compostos tem o objetivo de aplicar conceito
 
 
 ### Calculadora de Financiamento
-<img width="747" height="535" alt="image" src="https://github.com/user-attachments/assets/c6d2c1c7-66a3-4d6a-ae72-add948dcd5c5" />
+<img width="747" height="498" alt="image" src="https://github.com/user-attachments/assets/a02a7335-9bf7-41ae-b37e-3178515c7c84" />
+
 
 ## Funcionalidade ⚙️
 **Realizar cálculo automático do montante**
@@ -21,7 +22,9 @@ A criação da calculadora de juros compostos tem o objetivo de aplicar conceito
 
 **Apresentar estes valores ao usuário**
 
-**Realizar cálculo automático de financiamento seguindo as regras da tabela SAC e apresentar o custo total, juros totais pagos e o valor financiado ao usuário** \*NOVA FUNCIONALIDADE\*
+**Realizar cálculo automático de financiamento seguindo as regras da tabela SAC e apresentar o custo total, juros totais pagos e o valor financiado ao usuário**
+
+**Realizar cálculo automático de financiamento seguindo as regras da tabela Price e apresentar o custo total, juros totais pagos e o valor financiado ao usuário** \*NOVA FUNCIONALIDADE\*
 
 ## Tecnologias utilizadas 💻
 

@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class TelaCalculadoraController {
 
@@ -64,7 +65,7 @@ public class TelaCalculadoraController {
 
             double capitalInicial = Double.parseDouble(TextCapitalInicial);
             double taxa = Double.parseDouble(TextJuros);
-            int tempo = Integer.parseInt(TextTempo);
+            double tempo = Double.parseDouble(TextTempo);
 
             jc.setCapitalInicial(capitalInicial);
             jc.setTaxa(taxa);
@@ -112,7 +113,7 @@ public class TelaCalculadoraController {
     }
 
     public void mudarParaFinanciamento() throws IOException {
-        Parent fxmlFinanciamento = FXMLLoader.load(getClass().getResource("/br/com/samuel/calculadorajuroscompostos/resources/view/telaFinanciamento.fxml"));
+        Parent fxmlFinanciamento = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/br/com/samuel/calculadorajuroscompostos/resources/view/telaFinanciamento.fxml")));
 
         Scene sceneFinanciamento = new Scene(fxmlFinanciamento);
         sceneFinanciamento.getStylesheets().add(getClass().getResource("/br/com/samuel/calculadorajuroscompostos/resources/style/telaFinanciamento.css").toExternalForm());

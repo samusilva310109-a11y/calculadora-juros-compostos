@@ -1,5 +1,7 @@
 package br.com.samuel.calculadorajuroscompostos.model;
 
+import javafx.collections.ObservableList;
+
 public class Financiamento {
     private int mes;
     private double parcela;
@@ -34,7 +36,5 @@ public class Financiamento {
     public double getAmortizacao() {
         return amortizacao;
     }
-
-
 
 }

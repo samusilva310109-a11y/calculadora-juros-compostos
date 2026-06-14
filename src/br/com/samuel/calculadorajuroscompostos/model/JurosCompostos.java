@@ -3,13 +3,13 @@ package br.com.samuel.calculadorajuroscompostos.model;
 public class JurosCompostos {
     private double capitalInicial;
     private double taxa;
-    private int tempo;
+    private double tempo;
 
-    public int getTempo() {
+    public double getTempo() {
         return tempo;
     }
 
-    public void setTempo(int tempo) {
+    public void setTempo(double tempo) {
         this.tempo = tempo;
     }
 
